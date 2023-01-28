@@ -1,10 +1,13 @@
-"""Rock, paper, scissors!
 
-
-Rock, paper, scissors made on Python.
-"""
-options= ("rock", "paper", "scissors")
 import random
+
+options= ("rock", "paper", "scissors")
+results = {
+        "rock":0,
+        "paper":0,
+        "scissors":0
+    }
+
 
 
 def computer_choice():
@@ -19,16 +22,18 @@ def user_choice():
 
     user= str(input("Select what you want to play this round: Rock, paper, scissors.\n"))
     user= user.lower()
+    results[user] +=1 
     if user in options:
         return user
     else:
         raise Exception("Your choice is not valid. Check for typos and try again.")
 
 
-def run_game():
+
+def run_game(rounds):
     """Starts and handles the game from start to finish."""
 
-    rounds= 3
+    rounds = rounds
     user_win= 0
     computer_win= 0
 
@@ -84,6 +89,7 @@ def run_game():
 
         
         if rounds <= 0:
+           
             if user_win == computer_win:
                 print("It's a tie, you ended the game with the same amount of points.")
                 break
@@ -99,3 +105,4 @@ if __name__ == "__main__":
     # Global choice options.
     
     run_game()
+    

@@ -1,4 +1,8 @@
 import game.main as game
+import chars.charts as graph
 
 print("Welcome")
-game.run_game()
+rounds = input("set the plays: ")
+game.run_game(int(rounds))
+#print(game.results.values(),game.results.keys())
+graph.pieChart(game.results.values(),game.results.keys())
