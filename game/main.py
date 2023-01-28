@@ -3,7 +3,7 @@
 
 Rock, paper, scissors made on Python.
 """
-
+options= ("rock", "paper", "scissors")
 import random
 
 
@@ -97,5 +97,5 @@ def run_game():
 
 if __name__ == "__main__":
     # Global choice options.
-    options= ("rock", "paper", "scissors")
+    
     run_game()
